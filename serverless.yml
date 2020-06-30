@@ -1,0 +1,14 @@
+service: aws-lambda-test
+
+provider:
+  name: aws
+  runtime: java8
+
+package:
+  artifact: target/aws-lambda-test-0.0.1-SNAPSHOT-aws.jar
+
+functions:
+  uppercase:
+    handler: mate.awslambdatest.handler.StringToUpperCaseHandler::handleRequest
+    memorySize: 192
+    timeout: 10
